@@ -6,7 +6,7 @@ python:
 install:
     - pip install numpy
 script:
-    - python -m unittest discover
+    - python -m unittests discover
 notification:
     email:
         - jag@gmail.com
