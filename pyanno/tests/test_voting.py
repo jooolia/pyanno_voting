@@ -3,7 +3,7 @@ import numpy as np
 
 
 from pyanno import voting
-MV = -7
+MV = -1
 
 
 class TestVoting(unittest.TestCase):
