@@ -45,33 +45,33 @@ class TestVoting(unittest.TestCase):
         self.assertEqual(expected, result)
 
     def test_sum(self):
-    	self.assertAlmostEqual(1.1+2.2, 3.3)
+        self.assertAlmostEqual(1.1+2.2, 3.3)
 
     def test_add_arrays(self):
-    	x = np.array([1,1])
+        x = np.array([1,1])
         y = np.array([2,2])
         z = np.array([3,3])
         np.testing.assert_array_equal(x+y, z)
 
     def test_labels_frequency(self):
-	annotations = np.array([[1, 1, 2], [MV, 1, 2]])
-	expected = [ 0. ,  0.6,  0.4,  0. ]
-	result =  voting.labels_frequency(annotations, 4, MV)
-	print(result)
-	np.testing.assert_array_almost_equal(expected, result)
+        annotations = np.array([[1, 1, 2], [MV, 1, 2]])
+        expected = [ 0. ,  0.6,  0.4,  0. ]
+        result =  voting.labels_frequency(annotations, 4, MV)
+        print(result)
+        np.testing.assert_array_almost_equal(expected, result)
 
     def test_missing_observations(self):
-	annotations = np.array([[MV,MV,MV], [MV, MV, MV]])
+        annotations = np.array([[MV,MV,MV], [MV, MV, MV]])
 
 	with self.assertRaises(voting.PyannoValueError):
 		voting.labels_count(annotations, 4, MV)
 
     def test_different_missing_value(self):
         annotations = np.array([[1, 1, 2], [MV, 1, 2]])
-	expected = [ 0. ,  0.6,  0.4,  0. ]
-	result =  voting.labels_frequency(annotations, 4, MV)
-	print(result)
-	np.testing.assert_array_almost_equal(expected, result)        
+        expected = [ 0. ,  0.6,  0.4,  0. ]
+        result =  voting.labels_frequency(annotations, 4, MV)
+        print(result)
+        np.testing.assert_array_almost_equal(expected, result)        
 		
 
     def test_proper_missing_value(self):
