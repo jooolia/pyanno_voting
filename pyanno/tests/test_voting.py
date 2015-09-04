@@ -45,7 +45,7 @@ class TestVoting(unittest.TestCase):
         self.assertEqual(expected, result)
 
     def test_sum(self):
-	self.assertAlmostEqual(1.1+2.2, 3.3)
+    	self.assertAlmostEqual(1.1+2.2, 3.3)
 
     def test_add_arrays(self):
     	x = np.array([1,1])
